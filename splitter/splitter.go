@@ -7,5 +7,6 @@ type Splitter struct {
 }
 
 func (s *Splitter) Split(args []string) (parts Parts, remainder []string) {
+	// todo
 	return parts, remainder
 }

@@ -1,7 +1,7 @@
 package splitter
 
 import (
-	"github.com/trpx/parg/utils"
+	"reflect"
 	"testing"
 )
 
@@ -53,7 +53,7 @@ func TestParts(t *testing.T) {
 
 		expected := testCase.expectedResult
 
-		if !utils.EqualFmt(expected, parts) {
+		if !reflect.DeepEqual(expected, parts) {
 			t.Errorf(
 				"Test case %#v failed:"+
 					"\nexpected:\n%#v"+
