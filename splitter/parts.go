@@ -10,20 +10,18 @@ type Parts struct {
 
 func (p *Parts) addNamedString(name string, value string) {
 	_, ok := p.NamedString[name]
-	if ok {
-		p.NamedString[name] = append(p.NamedString[name], value)
-	} else {
-		p.NamedString[name] = []string{value}
+	if !ok {
+		p.NamedString[name] = []string{}
 	}
+	p.NamedString[name] = append(p.NamedString[name], value)
 }
 
 func (p *Parts) addNamedBool(name string, value bool) {
 	_, ok := p.NamedBool[name]
-	if ok {
-		p.NamedBool[name] = append(p.NamedBool[name], value)
-	} else {
-		p.NamedBool[name] = []bool{value}
+	if !ok {
+		p.NamedBool[name] = []bool{}
 	}
+	p.NamedBool[name] = append(p.NamedBool[name], value)
 }
 
 func NewParts() (parts Parts) {
