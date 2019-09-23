@@ -17,5 +17,6 @@ func (s *PositionalSplitter) Split(args []string) (parts Parts, remainder []stri
 }
 
 func (s *PositionalSplitter) Next() Splitter {
+	// todo
 	return nil
 }
